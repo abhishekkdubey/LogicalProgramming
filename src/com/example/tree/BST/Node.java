@@ -2,12 +2,12 @@ package com.example.tree.BST;
 
 public class Node {
 
-    int val;
-    Node left;
-    Node right;
+    public int value;
+    public Node left;
+    public Node right;
 
-    public Node(int val) {
-        this.val = val;
+    public Node(int value) {
+        this.value = value;
         this.left =null;
         this.right =null;
     }

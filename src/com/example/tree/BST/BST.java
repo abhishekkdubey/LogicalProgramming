@@ -23,7 +23,7 @@ public class BST {
     private Node insertion(Node root, int val) {
         if (root == null) {
             root = new Node(val);
-        } else if (val <= root.val) {
+        } else if (val <= root.value) {
             root.left = insertion(root.left, val);
         } else {
             root.right = insertion(root.right, val);
@@ -58,7 +58,7 @@ public class BST {
             s.push(root);
             while (!s.isEmpty()) {
                 Node temp = s.pop();
-                result.add(temp.val);
+                result.add(temp.value);
                 if (temp.right != null) {
                     s.push(temp.right);
                 }
@@ -85,7 +85,7 @@ public class BST {
                     current = current.left;
                 }
                 current = s.pop();
-                result.add(current.val);
+                result.add(current.value);
 
                 current = current.right;
             }
@@ -112,7 +112,7 @@ public class BST {
 
             else {
 
-                res.add(root.val); root = null;
+                res.add(root.value); root = null;
             }
         }
     }
@@ -126,7 +126,7 @@ public class BST {
         }
         while (!q.isEmpty()) {
             Node t = q.remove();
-            res.add(t.val);
+            res.add(t.value);
             if (t.left != null) {
                 q.add(t.left);
             }
@@ -145,9 +145,9 @@ public class BST {
     private boolean isAvailable(Node root, int val) {
         if (root == null) {
             return false;
-        } else if (root.val == val) {
+        } else if (root.value == val) {
             return true;
-        } else if (val < root.val) {
+        } else if (val < root.value) {
             return isAvailable(root.left, val);
         } else {
             return isAvailable(root.right, val);
@@ -162,7 +162,7 @@ public class BST {
         queue.add(rootNode);
         while (!queue.isEmpty()) {
             Node temp = queue.remove();
-            System.out.print(temp.val + " ,");
+            System.out.print(temp.value + " ,");
             if (temp.left != null) {
                 queue.add(temp.left);
             }
@@ -177,7 +177,7 @@ public class BST {
 
     public void preOrderTraversal(Node root) {
         if (root != null) {
-            System.out.print(root.val + ", ");
+            System.out.print(root.value + ", ");
             preOrderTraversal(root.left);
             preOrderTraversal(root.right);
         }
@@ -186,7 +186,7 @@ public class BST {
     public void inOrderTraversal(Node root) {
         if (root != null) {
             inOrderTraversal(root.left);
-            System.out.print(root.val + ", ");
+            System.out.print(root.value + ", ");
             inOrderTraversal(root.right);
         }
     }
@@ -195,7 +195,7 @@ public class BST {
         if (root != null) {
             postOrderTraversal(root.left);
             postOrderTraversal(root.right);
-            System.out.print(root.val + ", ");
+            System.out.print(root.value + ", ");
         }
     }
 
@@ -208,15 +208,15 @@ public class BST {
         if (root == null) {
             System.out.println("Value not found in BST");
             return null;
-        } else if (val > root.val) {
+        } else if (val > root.value) {
             root.right = deleteNode(root.right, val);
-        } else if (val < root.val) {
+        } else if (val < root.value) {
             root.left = deleteNode(root.left, val);
         } else {
             if (root.left != null && root.right != null) {
                 Node minRightSubTree = mininumSubTreeNode(root.right);
-                root.val = minRightSubTree.val;
-                root.right = deleteNode(root.right, minRightSubTree.val);
+                root.value = minRightSubTree.value;
+                root.right = deleteNode(root.right, minRightSubTree.value);
             } else if (root.left != null) {
                 root = root.left;
             } else if (root.right != null) {

@@ -1,4 +1,4 @@
-package com.example.tree;
+package com.example.tree.binaryheap;
 
 public class BinaryHeap {
 
@@ -32,17 +32,19 @@ public class BinaryHeap {
             arr[sizeOfHeap + 1] = val;
             sizeOfHeap++;
             heapifyBottomToTop(sizeOfHeap);
+            System.out.println("Value " + val + " inserted successfully !!");
         } else {
             throw new IndexOutOfBoundsException("BinaryHeap is full");
         }
     }
 
     private void heapifyBottomToTop(int index) {
-        int parent= index/2;
+        int parent = index / 2;
 
-        if (index<=1){
+        if (index <= 1) {
             return;
-        }if (arr[index] < arr[parent]) {
+        }
+        if (arr[index] < arr[parent]) {
             int temp = arr[index];
             arr[index] = arr[parent];
             arr[parent] = temp;
@@ -50,28 +52,28 @@ public class BinaryHeap {
         heapifyBottomToTop(parent);
     }
 
-    private void heapifyTopToBottom(int index){
-        int left=  index*2;
-        int right = index*2+1;
+    private void heapifyTopToBottom(int index) {
+        int left = index * 2;
+        int right = index * 2 + 1;
         int smallestChild;
 
-        if (sizeOfHeap<left){
+        if (sizeOfHeap < left) {
             return;
-        }else if (sizeOfHeap == left){
-            if (arr[index] >arr[left]){
+        } else if (sizeOfHeap == left) {
+            if (arr[index] > arr[left]) {
                 int temp = arr[index];
                 arr[index] = arr[left];
                 arr[left] = temp;
             }
             return;
-        }else{
-            if (arr[left]<arr[right]){
+        } else {
+            if (arr[left] < arr[right]) {
                 smallestChild = left;
-            }else{
+            } else {
                 smallestChild = right;
             }
 
-            if (arr[index]>arr[smallestChild]){
+            if (arr[index] > arr[smallestChild]) {
                 int temp = arr[index];
                 arr[index] = arr[smallestChild];
                 arr[smallestChild] = temp;
@@ -81,15 +83,22 @@ public class BinaryHeap {
     }
 
     public int extractHeadOfTop() {
-
-        if (sizeOfHeap==0){
+        if (sizeOfHeap == 0) {
             return -1;
-        }else{
+        } else {
             int val = arr[1];
             arr[1] = arr[sizeOfHeap];
             sizeOfHeap--;
             heapifyTopToBottom(1);
+            return val;
         }
-        return 0;
+    }
+
+    public void levelOrderTraversal() {
+        System.out.println("Level Oder Traversal !!");
+        for (int i = 1; i <= sizeOfHeap; i++) {
+            System.out.print(arr[i] + ", ");
+        }
+        System.out.println();
     }
 }

@@ -8,6 +8,7 @@ object DutchNationalFlagProblem {
     }
 
 
+
     fun segregate012(array: IntArray): IntArray {
 
         var low = 0
@@ -40,3 +41,7 @@ object DutchNationalFlagProblem {
     }
 
 }
+
+
+
+public class Test{}

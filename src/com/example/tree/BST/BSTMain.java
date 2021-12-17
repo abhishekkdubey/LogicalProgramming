@@ -1,5 +1,7 @@
 package com.example.tree.BST;
 
+import com.example.tree.TreeTraversalIterative;
+
 public class BSTMain {
 
     public static void main(String[] args) {
@@ -56,12 +58,15 @@ public class BSTMain {
 //        System.out.println();
 
         System.out.println(bst.traversing(BST.Traverse.PRE_ORDER));
+        new TreeTraversalIterative().preOrderTraversal(bst.rootNode);
         System.out.println("=====================");
         System.out.println(bst.traversing(BST.Traverse.IN_ORDER));
+        new TreeTraversalIterative().inOrderTraversal(bst.rootNode);
         System.out.println("=====================");
+        new TreeTraversalIterative().postOrderTraversal(bst.rootNode);
         System.out.println(bst.traversing(BST.Traverse.POST_ORDER));
-        System.out.println("=====================");
-        System.out.println(bst.traversing(BST.Traverse.LEVEL_ORDER));
+//        System.out.println("=====================");
+//        System.out.println(bst.traversing(BST.Traverse.LEVEL_ORDER));
 
 
     }
