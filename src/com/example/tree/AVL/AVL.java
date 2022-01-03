@@ -24,6 +24,9 @@ public class AVL {
         }
     }
 
+    public Node getRoot(){
+        return root;
+    }
 
     private Node search(Node root, int val) {
         if (root == null) {
@@ -236,7 +239,7 @@ public class AVL {
     }
 
 
-    public void printTreeGraphically() {
+    public void printTreeGraphically(Node root) {
         Queue<Node> queue = new LinkedList<>();
         Queue<Integer> level = new LinkedList<>();
 

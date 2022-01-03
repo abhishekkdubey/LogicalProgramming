@@ -15,9 +15,26 @@ public class AVLMain {
         avl.insert(90);
         avl.insert(100);
 
-        avl.printTreeGraphically();
+        avl.printTreeGraphically(avl.getRoot());
+
+        System.out.println();
+        System.out.println("---------------------------------");
+        Node root = null;
+        BalanceTree avl1= new BalanceTree();
+        root = avl1.insert(root, 10);
+        root = avl1.insert(root,20);
+        root = avl1.insert(root,30);
+        root = avl1.insert(root,40);
+        root = avl1.insert(root,50);
+        root = avl1.insert(root, 60);
+        root = avl1.insert(root,70);
+        root = avl1.insert(root,80);
+        root = avl1.insert(root,90);
+        root = avl1.insert(root,100);
+
+        avl.printTreeGraphically(root);
 
 
-        System.out.println(avl.traversing(AVL.Traverse.IN_ORDER));
+//        System.out.println(avl.traversing(AVL.Traverse.IN_ORDER));
     }
 }
