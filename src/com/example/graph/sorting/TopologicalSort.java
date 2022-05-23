@@ -16,7 +16,7 @@ public class TopologicalSort {
 
 	
 	void topologicalSort() {
-		Stack<GraphNode>stack = new Stack<>();
+		Stack<GraphNode> stack = new Stack<>();
 		for (GraphNode node : nodeList) { // if a node is unvisited then run topologicalSort on it
 			if (!node.isVisited())
 				topologicalVisit(node,stack);

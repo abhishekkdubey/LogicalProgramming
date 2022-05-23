@@ -42,10 +42,8 @@ public class ShortestSubstring {
         s.toArray(ar);
         Arrays.sort(ar);
         StringBuilder sb = new StringBuilder();
-        for (Character c : ar
-        ) {
+        for (Character c : ar) {
             sb.append(c);
-
         }
         String allStr = sb.toString();
 

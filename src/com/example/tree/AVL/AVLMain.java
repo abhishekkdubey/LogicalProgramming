@@ -35,6 +35,6 @@ public class AVLMain {
         avl.printTreeGraphically(root);
 
 
-//        System.out.println(avl.traversing(AVL.Traverse.IN_ORDER));
+        System.out.println(avl.traversing(AVL.Traverse.POST_ORDER));
     }
 }

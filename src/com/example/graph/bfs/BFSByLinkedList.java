@@ -16,10 +16,12 @@ public class BFSByLinkedList {
 	
 	//BFS Algorithm
 	void bfs() {
+
 		//if a node is unvisited then run bfs on it
 		for(GraphNode node: nodeList) {
 			if(!node.isVisited())
 				bfsVisit(node);
+
 		}
 	}//end of method
 	
@@ -27,6 +29,8 @@ public class BFSByLinkedList {
 	
 	//BFS internal method
 	void bfsVisit(GraphNode node) {
+
+
 		LinkedList<GraphNode>queue = new LinkedList<>();
 		queue.add(node); //add source node to queue
 		while(!queue.isEmpty()) {

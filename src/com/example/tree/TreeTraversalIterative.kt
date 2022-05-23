@@ -6,6 +6,9 @@ import java.util.*
 class TreeTraversalIterative {
 
     fun preOrderTraversal(root: Node?) {
+        val s = "Abcd"
+
+        s.indexOfFirst { it =='\'' }
         if (root != null) {
             val stack: Stack<Node> = Stack<Node>()
             stack.push(root)

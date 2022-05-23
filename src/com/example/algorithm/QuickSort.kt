@@ -35,7 +35,6 @@ class QuickSort {
                 array[i] = temp
             }
         }
-
         return i
     }
 }

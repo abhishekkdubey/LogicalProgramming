@@ -9,13 +9,16 @@ public class Test {
     public static void main(String[] args) {
 
 
-        bigSum(30);
+//        bigSum(30);
 
-        System.out.println(timeFormat("07:05:45PM"));
 
+//        System.out.println(timeFormat("07:05:45PM"));
+        System.out.println(titleToNumber("ZY"));
     }
 
-
+    public static int titleToNumber(String s) {
+        return s.length()==0?0:(s.charAt(s.length()-1)-'A'+1)+26*titleToNumber(s.substring(0, s.length()-1));
+    }
     public static void bigSum(int n) {
 
         BigInteger bInt= new BigInteger("1");
@@ -112,5 +115,4 @@ public class Test {
     }
 
 }
-
 

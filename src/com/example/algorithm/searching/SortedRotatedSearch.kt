@@ -8,7 +8,14 @@ object SortedRotatedSearch {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        println("Search for 2 in Array. Which is available at index: "+searchInteger(arr, 0, arr.size, 2))
+//        println("Search for 2 in Array. Which is available at index: "+searchInteger(arr, 0, arr.size, 2))
+//        println("Search for 2 in Array. Which is available at index: "+searchInteger(arrayOf(3,1), 0, 1, 2))
+        println("Search for 2 in Array. Which is available at index: "+ rotatedBinarySearch(intArrayOf(3,1), 0, 1, 2))
+        println("Search for 2 in Array. Which is available at index: "+ rotatedBinarySearch(intArrayOf(1,3), 0, 1, 3))
+        println("Search for 2 in Array. Which is available at index: "+ rotatedBinarySearch(intArrayOf(1,3,5), 0, 2, 1))
+        println(rotatedBinarySearch(intArrayOf(5,1,3), 0, 2, 3))
+        println(rotatedBinarySearch(intArrayOf(4,5,6,7,8,1,2,3), 0, 7, 8))
+        println(rotatedBinarySearch(intArrayOf(1,3), 0, 1, 3))
     }
 
     /**
@@ -51,6 +58,46 @@ object SortedRotatedSearch {
             return searchInteger(arr, pivot + 1, e, key)
         }
         return searchInteger(arr, s, pivot-1, key)
+    }
+
+
+    fun rotatedBinarySearch(nums: IntArray, start: Int, end: Int, target: Int): Int{
+
+        if(nums.size==1){
+            return if(target==nums[0]){
+                0
+            }else{
+                -1
+            }
+        }
+
+        var s = start
+        var e = end
+
+
+        while(s<=e){
+            val m = (e+s)/2
+
+            if(nums[m] == target) {
+                return m
+            } else if(nums[m]<nums[e]) {
+
+                if(target >= nums[m] && target <= nums[e]) {
+                    s = m+1
+                } else {
+                    e = m-1
+                }
+            } else {
+                if(nums[s] < nums[m] && target >= nums[s]  && target <= nums[m]) {
+                    e = m-1
+                } else {
+                    s = m+1
+                }
+            }
+
+        }
+
+        return -1
     }
 
 

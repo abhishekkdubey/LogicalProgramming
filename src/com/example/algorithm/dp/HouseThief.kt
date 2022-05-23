@@ -39,6 +39,7 @@ class HouseThief {
      */
     fun houseThief(wealth: IntArray): Int {
         val dp = IntArray(wealth.size + 2)
+
         for (i in wealth.size - 1 downTo 0) {
             dp[i] = max(wealth[i] + dp[i + 2], dp[i + 1])
         }

@@ -5,13 +5,14 @@ class EditDistance {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            println(EditDistance().editDistanceToMatch("able", "atle"))
-            println(EditDistance().editDistanceToMatch("table", "able"))
-            println(EditDistance().editDistanceToMatch("unable", "stable"))
-            println(EditDistance().editDistanceToMatch("Anshuman","Antihuman"))
-            println(EditDistance().editDistanceToMatch("Anshuman", "Antihuman"))
-            println(EditDistance().editDistanceToMatch("abcd", "kbadxr"))
-            println(EditDistance().editDistanceToMatch("abad", "abac"))
+            println(EditDistance().editDistanceToMatch("able", "able"))
+//            println(EditDistance().editDistanceToMatch("able", "atle"))
+//            println(EditDistance().editDistanceToMatch("table", "able"))
+//            println(EditDistance().editDistanceToMatch("unable", "stable"))
+//            println(EditDistance().editDistanceToMatch("Anshuman","Antihuman"))
+//            println(EditDistance().editDistanceToMatch("Anshuman", "Antihuman"))
+//            println(EditDistance().editDistanceToMatch("abcd", "kbadxr"))
+//            println(EditDistance().editDistanceToMatch("abad", "abac"))
 
         }
 
